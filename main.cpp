@@ -57,11 +57,12 @@ void efectuarDivision(int** matriz, int tamanio){
 
 	for (int m = tamanio; m >= 0; m--)
 	{
+		
 		for (int i = 0; i < 3 ; i++)
 		{
 			for (int j = tamanio; j >= 0; j--)
 			{	
-				cout<<matriz[i][j];
+				cout<<matriz[i][j]<<"\t";
 				if(i == 0 && j == 0){
 					cout<<"|"<<a;
 				}
@@ -69,14 +70,17 @@ void efectuarDivision(int** matriz, int tamanio){
 					cout<<"|"<<endl;
 					for (int i = 0; i < tamanio; i++)
 					{
-						cout<<"--";
+						cout<<"------------";
 					}
 				}
 				
+				
 			}
 			cout<<endl;
+			matriz[1][m-1] = matriz[2][m] * a;
+			matriz[2][m] = matriz[0][m] + matriz[1][m];
 		}
-		
+
 		cout<<endl;
 
 	}
