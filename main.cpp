@@ -73,17 +73,19 @@ void efectuarDivision(int** matriz, int tamanio){
 						cout<<"------------";
 					}
 				}
-				
-				
 			}
 			cout<<endl;
 			matriz[1][m-1] = matriz[2][m] * a;
 			matriz[2][m] = matriz[0][m] + matriz[1][m];
 		}
-
 		cout<<endl;
-
+	}
+	cout<<"El cociente es: ";
+	for (int n = tamanio; n >= 2; n--)
+	{
+		cout<<matriz[2][n]<<"X^"<<n-1<<" + ";
 	}
 	
-
+	cout<<" "<<matriz[2][1]<<endl;
+	cout<<"El residuo es: "<<matriz[2][0]<<endl;
 }
