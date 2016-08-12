@@ -30,6 +30,13 @@ int main()
 		TrianguloPascal *triangulo; 
 		triangulo = new TrianguloPascal(matriz2);
 
+		for(int i=0; i<=6; i++)
+    	{
+        	for(int j=0; j<=i; j++)
+            	cout <<triangulo->combinacion(i, j) << "  ";
+        	cout << endl;
+    	}
+
 	}
 	return 0;
 }
@@ -44,7 +51,7 @@ void inicializarMatriz(int** matriz, int tamanio){
 }
 
 void printMenu(){
-	cout<<"1. Ejercicio 1\n2. Ejercicio 3\n3. Salir\n";
+	cout<<"1. Ejercicio 1\n2. Ejercicio 2\n3. Salir\n";
 }
 
 void efectuarDivision(int** matriz, int tamanio){
