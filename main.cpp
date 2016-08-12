@@ -1,3 +1,4 @@
+#include "TrianguloPascal.h"
 #include <iostream>
 using namespace std;
 
@@ -7,19 +8,27 @@ void efectuarDivision(int**, int);
 
 int main()
 {
-	int opcion, tamanio, coef3, coef2, coef1, coef0, a;
+	int opcion, tamanio, a, filas;
 	printMenu();
 	cin>>opcion;
 
-	switch(opcion){
-		case 1:
-			cout<<"Ingrese el grado mas alto del polinomio: ";
-			cin>>tamanio;
-			int** matriz = new int*[3];
-			inicializarMatriz(matriz, tamanio);
-			efectuarDivision(matriz, tamanio);
-
-		break;
+	if (opcion == 1)
+	{
+		cout<<"Ingrese el grado mas alto del polinomio: ";
+		cin>>tamanio;
+		int** matriz = new int*[3];
+		inicializarMatriz(matriz, tamanio);
+		efectuarDivision(matriz, tamanio);
+		
+	}
+			
+	if (opcion == 2)
+	{
+		cout<<"Ingrese el numero de filas: ";
+		cin>>filas;
+		int** matriz2 = new int*[filas];
+		TrianguloPascal *triangulo; 
+		triangulo = new TrianguloPascal(matriz2);
 
 	}
 	return 0;
@@ -35,7 +44,7 @@ void inicializarMatriz(int** matriz, int tamanio){
 }
 
 void printMenu(){
-	cout<<"1. Ejercicio 1\n2. Ejercicio 3\n2. Salir\n";
+	cout<<"1. Ejercicio 1\n2. Ejercicio 3\n3. Salir\n";
 }
 
 void efectuarDivision(int** matriz, int tamanio){
